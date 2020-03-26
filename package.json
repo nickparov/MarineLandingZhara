@@ -1,0 +1,26 @@
+{
+  "name": "marinelandingzhara",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickparov/MarineLandingZhara.git"
+  },
+  "author": "nickparov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickparov/MarineLandingZhara/issues"
+  },
+  "homepage": "https://github.com/nickparov/MarineLandingZhara#readme",
+  "devDependencies": {
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
