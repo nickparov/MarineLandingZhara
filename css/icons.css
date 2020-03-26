@@ -13,6 +13,35 @@
 *
 * Date: 2019-7-6
 */
+
+/* CUSTOM */
+
+#OpenChatBtn {
+  animation-name: OpenChatBtnAnimation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes OpenChatBtnAnimation {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  30% {
+    transform: rotate(5deg) scale(1.2);
+  }
+
+  60% {
+    transform: rotate(-5deg) scale(1.2);
+  }
+
+  90% {
+    transform: rotate(3deg) scale(1.2);
+  }
+}
+
+/* END CUSTOM */
+
+
 @font-face {
   font-family: "remixicon";
   src: url("../fonts/remixicon-t=1562401252720.eot");

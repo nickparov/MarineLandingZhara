@@ -1069,14 +1069,13 @@ p {
 .service-box {
   position: relative;
   padding: 65px 30px 30px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
   border-radius: 6px;
   -webkit-box-shadow: 0 4px 18px rgba(52, 58, 64, 0.05);
           box-shadow: 0 4px 18px rgba(52, 58, 64, 0.05);
+  transition: 0.5s all !important;
 }
 
-.service-box .service-icon {
+/* .service-box .service-icon {
   position: relative;
   z-index: 1;
 }
@@ -1088,33 +1087,41 @@ p {
   width: 70px;
   position: absolute;
   border-radius: 6px;
+
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   left: 0px;
   top: -16px;
-}
+} */
 
 .service-box:hover, .service-box.active {
-  background: -webkit-gradient(linear, left top, right top, from(#6699cc), to(#003bd5c4));
-  background: linear-gradient(to right, #6699cc, #003bd5c4);
+  cursor: pointer;
+  
+  /* background: -webkit-gradient(linear, left top, right top, from(#6699cc), to(#003bd5c4));
+  background: linear-gradient(to right, #6699cc, #003bd5c4); */
+  background-color: #6699cc;
 }
 
 .service-box:hover .service-icon, .service-box.active .service-icon {
+  cursor: pointer;
   color: #ffffff !important;
 }
 
 .service-box:hover .service-icon:after, .service-box.active .service-icon:after {
+  cursor: pointer;
   background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.06));
 }
 
 .service-box:hover .service-title,
 .service-box:hover a, .service-box.active .service-title,
 .service-box.active a {
+  cursor: pointer;
   color: #ffffff !important;
 }
 
 .service-box:hover p, .service-box.active p {
-  color: rgba(255, 255, 255, 0.5) !important;
+  cursor: pointer;
+  color: rgb(252, 252, 252) !important;
 }
 
 .features-img img {
