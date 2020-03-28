@@ -51,8 +51,9 @@ $(window).scroll(function() {
 
 
 // SmoothLink
-$('#ToServicesBtn').on('click', (e) => SmoothTransitionLink(e))
+$('#ToServicesBtn').on('click', (e) => SmoothTransitionLink(e));
 $('.navbar-nav a').on('click', (e) => SmoothTransitionLink(e));
+$('#BackToTopBtn').on('click', (e) => SmoothTransitionLink(e));
 function SmoothTransitionLink(e) {
   e.preventDefault();
   var clickedLink = $(e.target),
@@ -75,7 +76,7 @@ $(document).ready(function() {
     $("#owl-demo").owlCarousel({
         autoPlay: 3000, //Set AutoPlay to 3 seconds
 
-        items: 3,
+        items: 4,
         itemsDesktop: [1199, 3],
         itemsDesktopSmall: [979, 1]
 

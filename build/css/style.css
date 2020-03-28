@@ -1,6 +1,22 @@
 
 /* CUSTOM */
 
+/* Loader */
+#loader_wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1030;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* Lodaer End */
+
 #shipsImg {
   animation: shipsAnimation 3s 1s 1;
 }
@@ -26,6 +42,16 @@
     transform: scale(1);
   }
 }
+/* contacts section */
+.contacts_link {
+  transition: all 0.5s;
+  color: rgba(0, 0, 0, 0.5);
+
+}
+.contacts_link:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
 
 /* Modal */
 .modal_container {
@@ -40,7 +66,7 @@
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 100;
+  z-index: 999;
 }
 
 #modal {
@@ -253,6 +279,13 @@ p {
   background: #6699cc !important;
 }
 @media( max-width: 980px ) {
+  #chat_section h2{
+    font-size: 22px;
+  }
+  .service-box h5 {
+    font-size: 1.1em;
+  }
+
   .nav-sticky.navbar-custom {
     margin-top: 0px;
     background-color: #ffffff;
@@ -946,8 +979,8 @@ p {
 }
 
 .bg-overlay {
-  background: -webkit-gradient(linear, left top, right top, from(#6699cc), to(#483afc));
-  background: linear-gradient(to right, #6699cc, #483afc);
+  background: -webkit-gradient(to right, #003bd5c4, #6699cc);
+  background: linear-gradient(to right, #003bd5c4, #6699cc);
   opacity: 0.85;
   position: absolute;
   top: 0;
@@ -1220,6 +1253,10 @@ p {
   position: relative;
   -webkit-animation: bounce 0.7s infinite linear;
           animation: bounce 0.7s infinite linear;
+}
+
+.fixed-top {
+  z-index: 500;
 }
 
 .service-box {

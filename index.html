@@ -26,11 +26,14 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/icons.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/loader.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body>
     <!-- [START] Managed By System (DO NOT REMOVE!) -->
+    <!-- MODAL -->
     <div class="modal_container row">
       <div class="col-lg-6 col-md-8 col-sm-10 p-0 mx-auto">
         <div id="modal" class="p-4">
@@ -48,15 +51,21 @@
         </div>
       </div>
     </div>
+    <!-- MODAL END -->
+    <!-- Loader -->
+    <div id="loader_wrapper">
+      <div class="loader">Loading...</div>
+    </div>  
+    <!-- Loader End -->
 
     <!--Navbar Start-->
     <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-light" id="navbar">
         <div class="container">
             <!-- LOGO -->
-            <a href="layout-one-1.html" class="logo-sticky">
+            <a href="index.html#home" class="logo-sticky">
                 <!-- <img src="images/logo-dark.png" alt="" class="logo-dark" height="32" />
                 <img src="images/logo-light.png" alt="" class="logo-light" height="32" /> -->
-                <p class="text-white mt-3">Zhara/Crewing</p>
+                <p class="btn btn-purple mt-3">Zhara/Crewing</p>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="remixicon-menu-fill"></i>
@@ -70,8 +79,8 @@
                         <a href="index.html#services"  class="nav-link">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#clients" class="nav-link">Clients</a>
-                    </li>
+                      <a href="index.html#contacts"  class="nav-link">Contacts</a>
+                    </li> 
                     <li class="nav-item">
                       <a href="index.html#chat_section" class="nav-link">Chat with us</a>
                   </li>
@@ -287,7 +296,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="counter-box p-4 rounded mt-2 mb-2">
                         <div class="float-left mr-4">
-                            <!-- <img src="images/counter/2.png" alt="" class="img-fluid"> -->
+
                             <i class="remixicon-shield-user-line text-white h1 service-icon"></i>
                         </div>
                         <div class="text-white">
@@ -323,19 +332,30 @@
     </section>
     <!-- COUNTER END -->
 
-    <!-- TESTIMONIAL START -->
-    <section class="section position-relative" id="clients">
+    <!-- contacts START -->
+    <section class="section position-relative" id="contacts">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="text-center title mb-4">
-                        <h5 class="font-weight-bold text-uppercase text-dark">Companies that trust us!</h5>
-                        <p class="text-muted">List of companies we cooperate with.</p>
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4">
+                    <div class="title mb-4">
+                        <h5 class="font-weight-bold text-uppercase text-dark ml-2 mt-3">Our Contacts:</h5>
+                        <!-- <p class="text-muted">All our possible contacts</p> -->
                     </div>
+                </div>
+                <div class="col-lg-8">
+                  <a href="mailto:admin@zhara.com.ua" class="contacts_link btn btn-purple mt-3 mx-2">
+                    <i class="remixicon-mail-line"></i> 
+                    admin@zhara.com.ua
+                  </a>
+                  <a href="tel:+380674805225" class="contacts_link btn btn-purple mt-3 mx-2">
+                    <i class="remixicon-phone-line"></i>
+                    +38(067) 480 52 25 - Alexander 
+                  </a>
                 </div>
             </div>
 
-            <div class="row mt-4">
+            <!-- OWL DEMO -->
+            <!-- <div class="row mt-4">
                 <div id="owl-demo">
                     <div class="item">
                         <div class="testi-content bg-white text-center m-3">
@@ -344,7 +364,6 @@
                             <p class="text-muted f-14">Web Development, USA</p>
                         </div>
                     </div>
-                    <!-- owl item and -->
                     <div class="item">
                         <div class="testi-content bg-white text-center m-3">
                             <img src="images/client/img-2.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle user-img">
@@ -352,7 +371,7 @@
                             <p class="text-muted f-14">Web Designer, USA</p>
                         </div>
                     </div>
-                    <!-- owl item and -->
+
                     <div class="item">
                         <div class="testi-content bg-white text-center m-3">
                             <img src="images/client/img-3.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle user-img">
@@ -360,7 +379,7 @@
                             <p class="text-muted f-14">Graphic Designer, USA</p>
                         </div>
                     </div>
-                    <!-- owl item and -->
+
                     <div class="item">
                         <div class="testi-content bg-white text-center m-3">
                             <img src="images/client/img-4.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle user-img">
@@ -368,7 +387,7 @@
                             <p class="text-muted f-14">Web Designer, USA</p>
                         </div>
                     </div>
-                    <!-- owl item and -->
+
                     <div class="item">
                         <div class="testi-content bg-white text-center m-3">
                             <img src="images/client/img-5.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle user-img">
@@ -376,7 +395,7 @@
                             <p class="text-muted f-14">Graphic Designer, USA</p>
                         </div>
                     </div>
-                    <!-- owl item and -->
+
                     <div class="item">
                         <div class="testi-content bg-white text-center m-3">
                             <img src="images/client/img-6.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle user-img">
@@ -384,7 +403,7 @@
                             <p class="text-muted f-14">Web Developer, USA</p>
                         </div>
                     </div>
-                    <!-- owl item and -->
+
                     <div class="item">
                         <div class="testi-content bg-white text-center m-3">
                             <img src="images/client/img-7.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle user-img">
@@ -392,12 +411,12 @@
                             <p class="text-muted f-14">Web Designer, USA</p>
                         </div>
                     </div>
-                    <!-- owl item and -->
+
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
-    <!-- TESTIMONIAL END -->
+    <!-- contacts END -->
 
     <!-- PRICING START -->
     <!-- <section class="section bg-light" id="pricing">
@@ -487,19 +506,20 @@
     <footer class="pt-5 pb-4 position-relative bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-12 d-flex justify-content-center">
                     <div class="footer-about-content mt-4">
-                        <img src="images/logo-dark.png" alt="" class="img-fluid">
-                        <p class="mt-4 text-muted f-15">Sed ut perspiciatis unde omnis iste a natus error scusantium doloremque rem explicabo.</p>
-                        <ul class="list-inline footer-icon mt-4">
-                            <li class="list-inline-item h4 mr-4"><a href="layout-one-4.html#" class="text-purple"><i class="remixicon-facebook-line"></i></a></li>
-                            <li class="list-inline-item h4 mr-4"><a href="layout-one-4.html#" class="text-purple"><i class="remixicon-twitter-line"></i></a></li>
-                            <li class="list-inline-item h4 mr-4"><a href="layout-one-4.html#" class="text-purple"><i class="remixicon-instagram-line"></i></a></li>
-                            <li class="list-inline-item h4"><a href="layout-one-4.html#" class="text-purple"><i class="remixicon-skype-line"></i></a></li>
+                        <!-- <img src="images/logo-dark.png" alt="" class="img-fluid"> -->
+                        <a href="index.html#home" id="BackToTopBtn" class="mt-4 btn btn-purple"><i class="remixicon-arrow-up-line"></i> Back to top</a>
+                        <a href="http://www.aviapromo.com.ua/seaman-air-tickets/" target="_blank" class="mt-4 btn btn-success">
+                          <i class="remixicon-links-line"></i>
+                          Full terms of cooperation</a>
+                        <ul class="list-inline footer-icon mt-4 text-center">
+                            <li class="list-inline-item h4 mr-4"><a href="https://www.facebook.com/TKZhara/" target="_blank" class="text-purple"><i class="remixicon-facebook-line"></i></a></li>
+                            <li class="list-inline-item h4 mr-4"><a href="https://www.instagram.com/zhara.tour/" target="_blank" class="text-purple"><i class="remixicon-instagram-line"></i></a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-8 offset-lg-1">
+                <!-- <div class="col-lg-8 offset-lg-1">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mt-4">
@@ -537,13 +557,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center mt-4">
-                        <p class="text-muted f-15 mb-0">2019 - 2020 © Modzy. Design By Themesdesign</p>
+                        <p class="text-black f-15 mb-0">2019 - 2020 © <a class="text-black" href="http://nickparov.com">nickparov.com</a> </p>
                     </div>
                 </div>
             </div>

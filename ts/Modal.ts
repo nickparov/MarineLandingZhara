@@ -25,9 +25,9 @@ const Modal = (function() {
   }
 
   function clearModal(): void {
-      $(Selectors.ModalTitle).html('');
-      $(Selectors.ModalContent).html('');
-      $(Selectors.ModalBtns).html('');
+    $(Selectors.ModalTitle).html('');
+    $(Selectors.ModalContent).html('');
+    $(Selectors.ModalBtns).html('');
   }
 
   function hideAndClear(): void {
@@ -39,24 +39,42 @@ const Modal = (function() {
     });
   }
 
+  function disableScrolling(): void {
+    $("body").css({
+      height: "100%",
+      overflow: "hidden"
+    });
+  }
+
+  function enableScrolling(): void {
+    $("body").css({
+      height: "auto",
+      overflow: "visible"
+    });
+  }
+
   function show(callback?: () => void ): void {
-      $(Selectors.ModalContainer).fadeIn( 700, function() {
-          // change modalOpened status
-            _setIsOpened(true);
-          // check for callback func
-            if(typeof callback === 'function')
-                callback();
-      });
+    disableScrolling();
+
+    $(Selectors.ModalContainer).fadeIn( 700, function() {
+        // change modalOpened status
+          _setIsOpened(true);
+        // check for callback func
+          if(typeof callback === 'function')
+              callback();
+    });
   }
 
   function hide(callback?: () => void): void {
-      $(Selectors.ModalContainer).fadeOut( 700, function() {
-          // change modalOpened status
-              _setIsOpened(false);
-          // check for callback func
-              if(typeof callback === 'function')
-                  callback();
-      });
+    enableScrolling();
+
+    $(Selectors.ModalContainer).fadeOut( 700, function() {
+        // change modalOpened status
+            _setIsOpened(false);
+        // check for callback func
+            if(typeof callback === 'function')
+                callback();
+    });
   }
 
   function addAlert(alertType: string = 'warning', boldText: string = '', stillText: string = '') {
