@@ -1,26 +1,38 @@
 {
-  "name": "marinelandingzhara",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nickparov/MarineLandingZhara.git"
-  },
-  "author": "nickparov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nickparov/MarineLandingZhara/issues"
-  },
-  "homepage": "https://github.com/nickparov/MarineLandingZhara#readme",
-  "devDependencies": {
-    "ts-loader": "^6.2.2",
-    "typescript": "^3.8.3",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
-  }
+    "name": "marinelanding",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "build": "webpack --mode production",
+        "dev": "webpack-dev-server --open 'Google Chrome' --config webpack.config.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nickparov/NewPortfolioWeb.git"
+    },
+    "author": "nickparov",
+    "license": "ISC",
+    "homepage": "http://nickparov.com",
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.0",
+        "@types/jquery": "^3.3.34",
+        "babel-loader": "^8.1.0",
+        "concurrently": "^4.1.1",
+        "css-loader": "^3.4.2",
+        "html-webpack-plugin": "^4.0.2",
+        "json-loader": "^0.5.7",
+        "mini-css-extract-plugin": "^0.9.0",
+        "style-loader": "^1.1.3",
+        "ts-loader": "^6.0.4",
+        "typescript": "^3.5.3",
+        "webpack": "^4.39.1",
+        "webpack-cli": "^3.3.6",
+        "webpack-dev-server": "^3.8.0",
+        "webpack-merge": "^4.2.2"
+    },
+    "dependencies": {
+        "jquery": "^3.4.1"
+    }
 }

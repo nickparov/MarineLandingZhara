@@ -51,15 +51,17 @@ $(window).scroll(function() {
 
 
 // SmoothLink
-$('.navbar-nav a').on('click', function(e) {
-e.preventDefault();
-var clickedLink = $(this),
-    sectionToNavigateTO = clickedLink.attr('href').split('#')[1];
-
-$('html, body').stop().animate({
-  scrollTop: $(`#${sectionToNavigateTO}`).offset().top - 0
-}, 1500, 'easeInOutExpo');
-});
+$('#ToServicesBtn').on('click', (e) => SmoothTransitionLink(e))
+$('.navbar-nav a').on('click', (e) => SmoothTransitionLink(e));
+function SmoothTransitionLink(e) {
+  e.preventDefault();
+  var clickedLink = $(e.target),
+      sectionToNavigateTO = clickedLink.attr('href').split('#')[1];
+  
+  $('html, body').stop().animate({
+    scrollTop: $(`#${sectionToNavigateTO}`).offset().top - 0
+  }, 1500, 'easeInOutExpo');
+  }
 
 // scrollspy
 $("#navbarCollapse").scrollspy({
@@ -79,4 +81,34 @@ $(document).ready(function() {
 
     });
 });
+
+// Service box
+$(".service-box").on('click', function(e) {
+  const compressedClass = "compressed",
+        isCompressed = $(this).hasClass(compressedClass);
+  var that = $(this);
+
+  function addCompressed() {
+    $(that).addClass(compressedClass);
+  }
+
+  function remCompressed() {
+    $(that).removeClass(compressedClass);
+  }
+
+  if(isCompressed) {
+    // decompress
+    $(that).css("max-height", "500px")
+    $(that).children().first().children().last().css("transform", "rotate(180deg) translateY(20px)");
+    console.log("Decompressed!");
+    remCompressed();
+  } else {
+    // compress
+    $(that).css("max-height", "150px");
+    $(that).children().first().children().last().css("transform", "rotate(0deg)");
+    console.log("Compressed!");
+    addCompressed();
+  }
+});
+
 })();

@@ -30,6 +30,24 @@
 </head>
 
 <body>
+    <!-- [START] Managed By System (DO NOT REMOVE!) -->
+    <div class="modal_container row">
+      <div class="col-lg-6 col-md-8 col-sm-10 p-0 mx-auto">
+        <div id="modal" class="p-4">
+          <h3  class="d-flex justify-content-between"><span id="modalTitle"></span> <i class="remixicon-close-line closeModalBtn"></i></h3>
+          <hr />
+          <div id="ModalContent">
+            <!-- modal content -->
+          </div>
+
+          <hr />
+
+          <div id="ModalBtns">
+            <!-- Modal buttons -->
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--Navbar Start-->
     <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-light" id="navbar">
@@ -45,7 +63,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a href="index.html#home"  class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
@@ -58,7 +76,7 @@
                       <a href="index.html#chat_section" class="nav-link">Chat with us</a>
                   </li>
                 </ul>
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" id="socialmediasNav">
                     <li class="nav-item">
                         <a href="" class="nav-link"><i class="remixicon-facebook-line f-16"></i></a>
                     </li>
@@ -80,25 +98,29 @@
             <div class="row align-items-center hero-4-content">
                 <div class="col-lg-5">
                     <h1 class="text-white hero-4-title font-weight-medium mb-4 line-height-1_4">Crewing/Seamans Agencies</h1>
-                    <p class="text-white-50 mb-5">Start Cooperation with us right now!</p>
+                    <p class="text-white mb-5">Start Cooperation with us right now!</p>
                     <div class="text-center subcribe-form mt-4">
-                            <form action="#">
-                                <input type="text" placeholder="Enter your email...">
-                                <button type="submit" class="btn rounded-pill btn-purple">send request</button>
-                            </form>
-                        </div>
-                    <div class="mt-4">
-                        <div class="google-sign float-left mr-2">
-                            <img src="images/google-img.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="pt-2">
-                            <a href="layout-one-4.html#" class="text-white f-15">or sign up with google</a>
-                        </div>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your email...">
+                            <button 
+                              type="submit" 
+                              class="btn rounded-pill btn-purple event-button" 
+                              data-eventhandler="SendRequest" 
+                              id="SendRequestBtn">
+                              send request
+                            </button>
+                        </form>
                     </div>
+                    <a href="index.html#services" class="btn btn-light mt-4 rounded-pill d-flex justify-content-between" id="ToServicesBtn">
+                      <i class=" mt-1 remixicon-arrow-down-s-line ri-lg"></i> 
+                        Our Services 
+                      <i class=" mt-1 remixicon-arrow-down-s-line ri-lg"></i>
+                    </a>
+                      
                 </div>
                 <div class="col-lg-6 offset-lg-1">
                    <div class="hero-4-img mt-5 mt-lg-0">
-                        <img src="images/ships.png" alt="" class="img-fluid mx-auto d-block">
+                        <img src="images/ships.png" alt="" class="img-fluid mx-auto d-block" id="shipsImg">
                    </div>
                 </div>
             </div>
@@ -127,69 +149,90 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box mt-4">
-                        <i class="remixicon-search-line text-purple h1 service-icon"></i>
-                        <h5 class="text-dark font-weight-medium service-title mb-3 mt-5">Hotel/Ticket Searching</h5>
-                        <p class="text-muted mb-4 f-15">
+                <div class="col-md-6">
+                    <div class="service-box compressed mt-4">
+                        <div class="d-flex justify-content-between">
+                          <i class="remixicon-search-line text-purple h1 service-icon d-inline-block pb-2"></i>
+                          <h5 class="text-dark font-weight-medium service-title mt-2 d-inline-block">Hotel & Ticket Searching</h5>
+                          <i class="remixicon-arrow-down-s-line service-icon ri-2x"></i>
+                        </div>
+                        <p class="text-muted mb-4 mt-4 f-15">
                           <b>Regular</b>  flight ticket searching and booking. 
                           <br> <b>Charter</b>  flight searching and booking. 
                           <br> <b>Hotel</b>  searching and booking around the world. 
                           <br> <b>Individual</b> and group transfer from airport to hotel.
                         </p> 
-                        <a href="layout-one-4.html#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
+                        
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box mt-4">
-                        <i class="remixicon-money-dollar-circle-line text-purple h1 service-icon"></i>
-                        <h5 class="text-dark font-weight-medium service-title mb-3 mt-5">Price Offerings</h5>
-                        <p class="text-muted mb-4 f-15"> <b>Sale</b>  airline ticket prices. 
+                <div class=" col-md-6">
+                    <div class="service-box compressed mt-4">
+                      <div class="d-flex justify-content-between">
+                        <i class="remixicon-money-dollar-circle-line text-purple h1 service-icon d-inline-block pb-2"></i>
+                        <h5 class="text-dark font-weight-medium service-title mt-2 d-inline-block">Price Offerings</h5>
+                        <i class="remixicon-arrow-down-s-line service-icon ri-2x"></i>
+                      </div>
+
+                        
+                        <p class="text-muted mt-4 f-15"> <b>Sale</b>  airline ticket prices. 
                           <br> <b>Special</b> offerings and prices for regular clients..
-                          <br> <b>Various</b> airline ticket price fares (Siemens, group, corporative)</p> 
-                        <a href="layout-one-4.html#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
+                          <br> <b>Various</b> airline ticket price fares (Siemens, group, corporative)
+                        </p> 
+                        
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box mt-4">
-                        <i class="remixicon-checkbox-multiple-line text-purple h1 service-icon"></i>
-                        <h5 class="text-dark font-weight-medium service-title mb-3 mt-5">Online <br> Check-in/Registration </h5>
-                        <p class="text-muted mb-4 f-15">
+                <div class=" col-md-6">
+                    <div class="service-box compressed mt-4">
+                      <div class="d-flex justify-content-between">
+                          <i class="remixicon-checkbox-multiple-line text-purple h1 service-icon d-inline-block pb-2"></i>
+                          <h5 class="text-dark font-weight-medium service-title mb-3 mt-2 d-inline-block">Online <br> Check-in/Registration 
+                          </h5>
+                          <i class="remixicon-arrow-down-s-line service-icon ri-2x"></i>
+                        </div>
+                        <p class="text-muted mt-4 f-15">
                           <b>Airlines</b> loyalty program registration. 
                           <br> <b>Single</b> and group online voyage/flight registration.
-
                         </p>
-                        <a href="layout-one-4.html#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
+                        
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box mt-4">
-                        <i class="remixicon-customer-service-2-line text-purple h1 service-icon"></i>
-                        <h5 class="text-dark font-weight-medium service-title mb-3 mt-5">Customer Support 24/7</h5>
-                        <p class="text-muted mb-4 f-15"> 
+                <div class=" col-md-6">
+                    <div class="service-box compressed mt-4">
+                      <div class="d-flex justify-content-between">
+                          <i class="remixicon-customer-service-2-line text-purple h1 service-icon d-inline-block pb-2"></i>
+                          <h5 class="text-dark font-weight-medium service-title mb-3 mt-2 d-inline-block">Customer Support 24/7</h5>
+                          <i class="remixicon-arrow-down-s-line service-icon ri-2x"></i>
+                        </div>
+                        <p class="text-muted mt-4 f-15"> 
                           <b>Worldwide</b> Customer Support Services 24/7 for the whole voyage duration.
                           <br> <b>Free</b> consultation services for all professionally related questions.
                         </p>
-                        <a href="layout-one-4.html#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
+                        
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box mt-4">
-                        <i class="remixicon-home-8-line text-purple h1 service-icon"></i>
-                        <h5 class="text-dark font-weight-medium service-title mb-3 mt-5">Apartament Renting</h5>
-                        <p class="text-muted mb-4 f-15"> <b>Villa</b>  renting.
+                <div class=" col-md-6">
+                    <div class="service-box compressed mt-4">
+                      <div class="d-flex justify-content-between">
+                          <i class="remixicon-home-8-line text-purple h1 service-icon d-inline-block pb-2"></i>
+                          <h5 class="text-dark font-weight-medium service-title mb-3 mt-2 d-inline-block">Apartament Renting</h5>
+                          <i class="remixicon-arrow-down-s-line service-icon ri-2x"></i>
+                        </div>
+                        <p class="text-muted mt-4 f-15"> <b>Villa</b>  renting.
                           <br> <b>Apartament</b> renting
                         </p>
-                        <a href="layout-one-4.html#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
+                        
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box mt-4">
-                        <i class="pe-7s-graph1 text-purple h1 service-icon"></i>
-                        <h5 class="text-dark font-weight-medium service-title mb-3 mt-5">Trip Planning</h5>
-                        <p class="text-muted mb-4 f-15">With us you will experience the most professional approach and you will also get various advantages in trip planning for your clients! 
+                <div class=" col-md-6">
+                    <div class="service-box compressed mt-4">
+                      <div class="d-flex justify-content-between">
+                          <i class="pe-7s-graph1 text-purple h1 service-icon d-inline-block pb-2"></i>
+                          <h5 class="text-dark font-weight-medium service-title mb-3 mt-2 d-inline-block">Trip Planning</h5>
+                          <i class="remixicon-arrow-down-s-line service-icon ri-2x"></i>
+                        </div>
+                        <p class="text-muted mt-4 f-15">With us you will experience the most professional approach and you will also get various advantages in trip planning for your clients! 
                         </p>
-                        <a href="layout-one-4.html#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
+                        
                     </div>
                 </div>
             </div>
@@ -369,7 +412,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4">
+                <div class="">
                     <div class="pricing-box text-center bg-white p-5 mt-4 position-relative">
                         <div class="mt-4 mb-5">
                             <i class="remixicon-star-line h3 text-purple pricing-icon p-4 rounded-circle"></i>
@@ -381,7 +424,7 @@
                         <button type="button" class="btn btn-outline-purple mt-4">Choose this plan</button>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="">
                     <div class="pricing-box active text-center bg-white p-5 mt-4 position-relative">
                         <div class="ribbon">
                             <p class="mb-0 f-12 font-weight-medium text-white">-20%</p>
@@ -396,7 +439,7 @@
                         <button type="button" class="btn btn-purple mt-4">Choose this plan</button>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="">
                     <div class="pricing-box text-center bg-white p-5 mt-4 position-relative">
                         <div class="ribbon">
                             <p class="mb-0 f-12 font-weight-medium text-white">-50%</p>
@@ -427,7 +470,7 @@
                           Still feel uncertain about us? 
                           <br> Chat with us right now!
                         </h2>
-                        <a href="#" class="btn btn-light mt-4" id="OpenChatBtn">
+                        <a href="#" class="btn btn-light mt-4 event-button" data-eventhandler="OpenChat" id="OpenChatBtn">
                           Open Chat <i class="text-black service-icon remixicon-message-2-line"></i> 
                         </a><br>
                         <a href="mailto:admin@zhara.com.ua" class="btn p-2 text-white mt-4">
@@ -517,6 +560,5 @@
     <script src="js/owl.carousel.min.js"></script>
     <!-- Default Js -->
     <script src="js/default.js"></script>
-
 </body>
 </html>

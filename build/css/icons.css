@@ -1,8 +1,4 @@
-/*
- Template Name: Modzy - Responsive Bootstrap 4 Admin Dashboard
- Author: Themesdesign
- File: Icons
- */
+
 /*
 * Remix Icon v1.3.1
 * https://remixicon.com
@@ -10,36 +6,9 @@
 *
 * Copyright RemixIcon.com
 * Released under the Apache License Version 2.0
-*
-* Date: 2019-7-6
 */
 
-/* CUSTOM */
 
-#OpenChatBtn {
-  animation-name: OpenChatBtnAnimation;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes OpenChatBtnAnimation {
-  0%, 100% {
-    transform: rotate(0deg) scale(1);
-  }
-  30% {
-    transform: rotate(5deg) scale(1.2);
-  }
-
-  60% {
-    transform: rotate(-5deg) scale(1.2);
-  }
-
-  90% {
-    transform: rotate(3deg) scale(1.2);
-  }
-}
-
-/* END CUSTOM */
 
 
 @font-face {

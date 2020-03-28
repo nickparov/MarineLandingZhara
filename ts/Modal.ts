@@ -1,0 +1,100 @@
+const Modal = (function() {
+
+  // Private methods and vars
+  const ModalStatus = {
+          isOpened: false
+      },
+      Selectors = {
+          ModalContent: '#ModalContent',
+          ModalContainer: '.modal_container',
+          CloseModalBtn: '.closeModalBtn',
+          ModalTitle: '#modalTitle',
+          ModalBtns: "#ModalBtns"
+      };
+
+  function _setIsOpened(bool: boolean) {
+    ModalStatus.isOpened = bool;
+  }
+  // Public
+  function populateModal(title: string, contentHtml: string, btnsHtml: string): void {
+      // Change Modal Title
+      $(Selectors.ModalTitle).html(title);
+      // populate ModalContent with html content
+      $(Selectors.ModalContent).html(contentHtml);
+      $(Selectors.ModalBtns).html(btnsHtml);
+  }
+
+  function clearModal(): void {
+      $(Selectors.ModalTitle).html('');
+      $(Selectors.ModalContent).html('');
+      $(Selectors.ModalBtns).html('');
+  }
+
+  function hideAndClear(): void {
+    $(Selectors.ModalContainer).fadeOut( 700, function() {
+        // change modalOpened status
+          _setIsOpened(false);
+        // clear the modal
+          clearModal();
+    });
+  }
+
+  function show(callback?: () => void ): void {
+      $(Selectors.ModalContainer).fadeIn( 700, function() {
+          // change modalOpened status
+            _setIsOpened(true);
+          // check for callback func
+            if(typeof callback === 'function')
+                callback();
+      });
+  }
+
+  function hide(callback?: () => void): void {
+      $(Selectors.ModalContainer).fadeOut( 700, function() {
+          // change modalOpened status
+              _setIsOpened(false);
+          // check for callback func
+              if(typeof callback === 'function')
+                  callback();
+      });
+  }
+
+  function addAlert(alertType: string = 'warning', boldText: string = '', stillText: string = '') {
+    const HTML: string = `
+      <div class="alert alert-${alertType} alert-dismissible fade show" role="alert">
+        <strong>${boldText}</strong> ${stillText}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    `;
+
+    $(Selectors.ModalContent).prepend(HTML);
+  }
+
+  function getSelectors(): object {
+      return Selectors;
+  }
+
+  // Module self-initialization
+  (function init() {
+       $(Selectors.ModalContainer).hide();
+       // set up close btn event listener
+       $('body').on('click', Selectors.CloseModalBtn, function() {
+          hide(clearModal);
+       });
+  })();
+
+  // Interface
+  return {
+      hide,
+      show,
+      clearModal,
+      populateModal,
+      getSelectors,
+      hideAndClear,
+      addAlert
+  }
+})()
+
+export default Modal;
