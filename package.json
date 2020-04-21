@@ -33,6 +33,10 @@
         "webpack-merge": "^4.2.2"
     },
     "dependencies": {
-        "jquery": "^3.4.1"
+        "axios": "^0.19.2",
+        "cors": "^2.8.5",
+        "jquery": "^3.4.1",
+        "jshashes": "^1.0.8",
+        "nodemailer": "^6.4.6"
     }
 }

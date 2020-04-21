@@ -29,8 +29,6 @@ const Loader = (function() {
 
           hideLoader();
       }, 800);
-
-      
   }
 
   function toggleReload(): void {

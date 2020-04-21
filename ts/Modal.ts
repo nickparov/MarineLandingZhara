@@ -12,8 +12,12 @@ const Modal = (function() {
           ModalBtns: "#ModalBtns"
       };
 
-  function _setIsOpened(bool: boolean) {
+  function _setIsOpened(bool: boolean): void {
     ModalStatus.isOpened = bool;
+  }
+
+  function getModalStatus(): boolean {
+    return ModalStatus.isOpened;
   }
   // Public
   function populateModal(title: string, contentHtml: string, btnsHtml: string): void {
@@ -39,14 +43,14 @@ const Modal = (function() {
     });
   }
 
-  function disableScrolling(): void {
+  function _disableScrolling(): void {
     $("body").css({
       height: "100%",
       overflow: "hidden"
     });
   }
 
-  function enableScrolling(): void {
+  function _enableScrolling(): void {
     $("body").css({
       height: "auto",
       overflow: "visible"
@@ -54,7 +58,7 @@ const Modal = (function() {
   }
 
   function show(callback?: () => void ): void {
-    disableScrolling();
+    _disableScrolling();
 
     $(Selectors.ModalContainer).fadeIn( 700, function() {
         // change modalOpened status
@@ -66,7 +70,7 @@ const Modal = (function() {
   }
 
   function hide(callback?: () => void): void {
-    enableScrolling();
+    _enableScrolling();
 
     $(Selectors.ModalContainer).fadeOut( 700, function() {
         // change modalOpened status
@@ -94,14 +98,20 @@ const Modal = (function() {
       return Selectors;
   }
 
+
   // Module self-initialization
-  (function init() {
-       $(Selectors.ModalContainer).hide();
-       // set up close btn event listener
-       $('body').on('click', Selectors.CloseModalBtn, function() {
-          hide(clearModal);
-       });
-  })();
+  $(Selectors.ModalContainer).hide();
+  // set up close btn event listener
+  $('body').on('click', Selectors.CloseModalBtn, function() {
+    hide(clearModal);
+  });
+
+  $(document).keyup(function(e) {
+    if ((e.key === "Escape") && getModalStatus() === true) { // escape key maps to keycode `27`
+      hide(clearModal);
+    }
+  })
+
 
   // Interface
   return {
@@ -111,7 +121,8 @@ const Modal = (function() {
       populateModal,
       getSelectors,
       hideAndClear,
-      addAlert
+      addAlert,
+      getModalStatus
   }
 })()
 

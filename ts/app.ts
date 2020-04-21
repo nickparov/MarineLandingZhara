@@ -1,37 +1,24 @@
 import Chat from "./Chat";
 import Modal from "./Modal";
 import Loader from "./Loader";
+import Events from './Events';
 
 const App = (function () {
+  // Privates
   const Selectors = {
     EventBtnClass: ".event-button" 
   }
-  
-  interface EventHandlerObj {
-    [key: string]: Function
-  }
-  
-  const EventHandlers: EventHandlerObj = {
-    OpenChat: function(e: JQuery.Event): void {
-  
-    },
-    SendRequest: function(e: JQuery.Event): void {
-      Modal.populateModal(
-        "Send Request!", 
-        `<input placeholder="Your message" name="message" class="form-control"/>`, 
-        `<button class="btn btn-large btn-outline-primary">Send</button>`);
-      Modal.show();
-    }
-  }
+
+  const EventHandlers = Events.GetEventHandlers();
   
   function SetupEvents(): void {
-    $(Selectors.EventBtnClass).on('click',(e) => {
+    $(document).on('click', Selectors.EventBtnClass ,(e) => {
       e.preventDefault();
       // event func identifier
       const eventFuncIndentifier: string = $(e.target).data('eventhandler');
       // checking if event obj has such func
       if(EventHandlers.hasOwnProperty(eventFuncIndentifier)) 
-        EventHandlers[eventFuncIndentifier]();
+        EventHandlers[eventFuncIndentifier](e);
       else  
         throw new Error("No such eventFuncIndentifier prop on EventHandler obj! Wrong one provided!")
     });
