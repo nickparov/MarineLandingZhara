@@ -1,6 +1,6 @@
 import Modal from './Modal';
 import Mail from './Modules/Mail';
-import * as Components from './Components/Components';
+import { RequestContainer, SubmitBtn } from './Components/export';
 import Loader from './Loader';
 
 export const Events = (function(){
@@ -33,17 +33,12 @@ export const Events = (function(){
       }
 
       function _valid(): void {
+        const ReqContainerHTML = new RequestContainer("Type any additional info that you need us to know about!").render(),
+              SubmitBtnHTML = new SubmitBtn(email).render();
         Modal.populateModal(
-          "Send Request!", 
-            Components.RequestContainer("Type any additional info that you need us to know about!"), 
-            `<div class="d-flex justify-content-center">
-              <button 
-                class="btn btn-large btn-outline-primary event-button" 
-                data-eventhandler="DoSendRequest" 
-                data-reqemail="${email}"
-                id="DoSendRequestBtn"
-              >Send</button>
-            </div>`
+            "Send Request!", 
+            ReqContainerHTML, 
+            SubmitBtnHTML
           );
         Modal.show();
       }

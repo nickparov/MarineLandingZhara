@@ -25,8 +25,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/icons.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/loader.css" rel="stylesheet" type="text/css" />
+
+    <!-- date picker -->
+    <link  href="js/libs/datepicker/dist/datepicker.min.css" rel="stylesheet">
 
 </head>
 
@@ -327,7 +329,55 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-8 mt-5 mx-auto">
+                  <h1 class="text-white text-center">Want to find price now?</h1>
+                  <div class="bg-light p-4">
+                    <div class="row">
+                      <div class="col-lg-6 mt-2">
+                        <label for="from_airport"> From </label>
+                        <select class="form-control" id="from_airport">
+                          <option value="volvo">Volvo</option>
+                          <option value="z">Z</option>
+                          <option value="s">S</option>
+                        </select>
+                      </div>
+                      <div class="col-lg-6 mt-2">
+                        <label for="to_airport"> To </label>
+                        <select class="form-control" id="from_airport">
+                          <option value="volvo">Volvo</option>
+                          <option value="z">Z</option>
+                          <option value="s">S</option>
+                        </select>
+                      </div>
+                      <div class="col-12 mt-4">
+                        <div class="text-center">
+                          <i class="mr-1 remixicon-flight-takeoff-fill" style="font-size: 25px;color: #003bd5c4;"></i>
+                          <span class="mr-1">Choose dept. date</span>  
+                          <input 
+                            data-toggle="datepicker" 
+                            placeholder="m/d/y" 
+                            name="date_airport"
+                            required
+                            class="text-center d-inline border" 
+                            id="date_airport"/>
+                        </div>
+                        <div class="text-center mt-4">
+                          <button class="btn btn-purple">Send Request</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="text-center">
+                    <button class="btn btn-success mt-4">Submit</button>
+                  </div> -->
+                </div>
             </div>
+
+            <!-- <div class="row">
+              <div class="col-lg-8 bg-light mt-4 mx-auto">
+                <h1>Hell</h1>
+              </div>  
+            </div> -->
         </div>
     </section>
     <!-- COUNTER END -->
@@ -503,7 +553,7 @@
     <!-- CTA END -->
 
     <!-- FOOTER START -->
-    <footer class="pt-5 pb-4 position-relative bg-light">
+    <footer class="pt-5 pb-4 position-relative bg-gradient">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-center">
@@ -514,8 +564,8 @@
                           <i class="remixicon-links-line"></i>
                           Full terms of cooperation</a>
                         <ul class="list-inline footer-icon mt-4 text-center">
-                            <li class="list-inline-item h4 mr-4"><a href="https://www.facebook.com/TKZhara/" target="_blank" class="text-purple"><i class="remixicon-facebook-line"></i></a></li>
-                            <li class="list-inline-item h4 mr-4"><a href="https://www.instagram.com/zhara.tour/" target="_blank" class="text-purple"><i class="remixicon-instagram-line"></i></a></li>
+                            <li class="list-inline-item h4 mr-4"><a href="https://www.facebook.com/TKZhara/" target="_blank" class="text-white"><i class="remixicon-facebook-line"></i></a></li>
+                            <li class="list-inline-item h4 mr-4"><a href="https://www.instagram.com/zhara.tour/" target="_blank" class="text-white"><i class="remixicon-instagram-line"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -563,7 +613,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center mt-4">
-                        <p class="text-black f-15 mb-0">2019 - 2020 © <a class="text-black" href="http://nickparov.com">nickparov.com</a> </p>
+                        <p class="text-white f-15 mb-0">2019 - 2020 © <a class="text-white" href="http://nickparov.com">nickparov.com</a> </p>
                     </div>
                 </div>
             </div>
@@ -579,6 +629,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- carousel -->
     <script src="js/owl.carousel.min.js"></script>
+    <!-- date picker -->
+    <script src="js/libs/datepicker/dist/datepicker.min.js"></script>
     <!-- Default Js -->
     <script src="js/default.js"></script>
 </body>

@@ -3,6 +3,9 @@ import Modal from "./Modal";
 import Loader from "./Loader";
 import Events from './Events';
 
+var DatePicker = require('@chenfengyuan/datepicker');
+
+
 const App = (function () {
   // Privates
   const Selectors = {
@@ -29,7 +32,7 @@ const App = (function () {
 
     setTimeout(() => {
       Loader.hideLoader();
-    }, 1500);
+    }, 0);
   }
 
   return {

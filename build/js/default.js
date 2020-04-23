@@ -111,4 +111,9 @@
       addCompressed();
     }
   });
+
+  // date picker
+  $('#date_airport').datepicker({autoHide: true});
+
+
   } )

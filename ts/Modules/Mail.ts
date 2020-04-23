@@ -1,7 +1,7 @@
 import axios from '../../node_modules/axios/index';
 import Modal from '../Modal';
 import Loader from '../Loader';
-import * as Components from '../Components/Components';
+import { Alert } from '../Components/export';
 
 export const Mail = (function() {
   const FirebaseFunctions = {
@@ -17,7 +17,7 @@ export const Mail = (function() {
         console.log(res);
         setTimeout(() => {
           Loader.hideLoader();
-          Modal.populateModal("Request Confirmation!", Components.Alert("success", alertSuccessText), ``);
+          Modal.populateModal("Request Confirmation!", new Alert("success", alertSuccessText).render(), ``);
         }, 1300);
       }).catch(err => {
         console.log(err)
