@@ -35,12 +35,12 @@ const Modal = (function() {
   }
 
   function hideAndClear(): void {
-    $(Selectors.ModalContainer).fadeOut( 700, function() {
-        // change modalOpened status
-          _setIsOpened(false);
-        // clear the modal
-          clearModal();
-    });
+    hide(function() {
+      // change modalOpened status
+        _setIsOpened(false);
+      // clear the modal
+        clearModal();
+      });
   }
 
   function _disableScrolling(): void {
@@ -74,10 +74,10 @@ const Modal = (function() {
 
     $(Selectors.ModalContainer).fadeOut( 700, function() {
         // change modalOpened status
-            _setIsOpened(false);
+          _setIsOpened(false);
         // check for callback func
-            if(typeof callback === 'function')
-                callback();
+          if(typeof callback === 'function')
+            callback();
     });
   }
 
