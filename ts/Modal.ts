@@ -105,7 +105,6 @@ const Modal = (function() {
   $('body').on('click', Selectors.CloseModalBtn, function() {
     hide(clearModal);
   });
-
   $(document).keyup(function(e) {
     if ((e.key === "Escape") && getModalStatus() === true) { // escape key maps to keycode `27`
       hide(clearModal);

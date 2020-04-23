@@ -50,9 +50,6 @@ export const Events = (function(){
           ""
           );
         Modal.show();
-        setTimeout(() => {
-          Modal.hideAndClear();
-        }, 900);
       }
     },
     DoSendRequest: function(e: JQuery.ClickEvent): void {
