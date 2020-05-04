@@ -1,5 +1,13 @@
 
 /* CUSTOM */
+.more_less_three_days_radio_container {
+  background-color: #6699cc;
+  color: white;
+  /* width: 200px; */
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
 
 /* Loader */
 #loader_wrapper {

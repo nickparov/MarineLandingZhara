@@ -14,12 +14,13 @@ export default class RequestContainer extends CoreComponent {
   }
 
   private setHandler(): void {
+    let that = this;
     // set handler
     $(document).on({
       focusin: function() {
-        if(this.wasfocused === false) {
+        if(that.wasfocused === false) {
           $(this).val("")
-          this.wasfocused = true;
+          that.wasfocused = true;
         } 
       }
     }, "#RequestMessage");

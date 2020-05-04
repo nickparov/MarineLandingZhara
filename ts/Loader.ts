@@ -3,13 +3,14 @@ const Loader = (function() {
   // Private
   let loading: boolean = true;
   const loaderWrapperSelector: string = '#loader_wrapper';
+  const loaderTimeout: number = 800;
 
   function showLoader(): void {
-      $(loaderWrapperSelector).fadeIn('slow');
+      $(loaderWrapperSelector).fadeIn(loaderTimeout);
   }
 
   function hideLoader(): void {
-      $(loaderWrapperSelector).fadeOut('slow');
+      $(loaderWrapperSelector).fadeOut(loaderTimeout);
   }
   // Public
   function simulateReloading(callback: () => void, callbackObject?: object) {
@@ -28,7 +29,7 @@ const Loader = (function() {
           }
 
           hideLoader();
-      }, 800);
+      }, loaderTimeout);
   }
 
   function toggleReload(): void {
@@ -49,6 +50,10 @@ const Loader = (function() {
   function setPageLoadingStatus(status: boolean): void {
       loading = status;
   }
+
+  function getLoaderTime(): number {
+    return loaderTimeout;
+  }
   // Interface
   return {
       getPageLoadingStatus,
@@ -56,7 +61,8 @@ const Loader = (function() {
       toggleReload,
       simulateReloading,
       showLoader,
-      hideLoader
+      hideLoader,
+      getLoaderTime
   }
 
 })();
