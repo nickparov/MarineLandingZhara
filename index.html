@@ -331,40 +331,61 @@
                 </div>
                 <div class="col-lg-8 mt-5 mx-auto">
                   <h1 class="text-white text-center">Want to find price now?</h1>
-                  <div class="bg-light p-4">
-                    <div class="row">
-                      <div class="col-lg-12 mt-2">
-                        <label for="from_keyword"> Start typing City or Airport (FROM)</label>
-                      
+                  <div class="bg-light p-4" id="PriceRequestSection">
+                    <div class="row  mt-2">
+                      <div class="col-lg-6">
+                        <label for="city_from_field"> From city </label>
                         <input 
                           type="text" 
-                          placeholder="City"   
-                          class="form-control event-input" 
-                          id="from_keyword" 
-                          data-eventhandler="PriceKeywordEntered"/>
+                          placeholder="City From"   
+                          class="form-control event-input price_city_select_field" 
+                          id="city_from_field" 
+                          data-eventhandler="CityNameEntered"
+                          data-citylistid="#from_city_list"
+                        />
+                        <ul id="from_city_list" class="city_list d-none" data-fieldid="city_from_field">
+                          <span style="color: white;">No Results</span>
+                        </ul>
+                      </div>
+                      <div class="col-lg-6">
+                        <label for="city_to_field"> To City</label>
+                        <input 
+                          type="text" 
+                          placeholder="City To"   
+                          class="form-control event-input price_city_select_field" 
+                          id="city_to_field" 
+                          data-eventhandler="CityNameEntered"
+                          data-citylistid="#to_city_list"
+                        />
+                        <ul id="to_city_list" class="city_list d-none" data-fieldid="city_to_field">
+                          <span style="color: white;">No Results</span>
+                        </ul>
                       </div>
                       <div class="col-12 mt-4">
                         <div class="row">
-                          <div class="col-lg-6 mt-2">
+                          <div class="col-lg-6 mt-3">
                             <div class="more_less_three_days_radio_container">
                               <label for="more_less_3_days">+/- 3 days?</label>
                               <input type="checkbox" id="more_less_3_days">
                             </div>
                           </div>
-                          <div class="col-lg-6 mt-2">
+                          <div class="col-lg-6 mt-1">
                             <i class="mr-1 remixicon-flight-takeoff-fill" style="font-size: 25px;color: #003bd5c4;"></i>
                             <span class="mr-1">dept. date</span>  
                             <input 
                               data-toggle="datepicker" 
-                              placeholder="m/d/y" 
+                              placeholder="d/m/y" 
                               name="date_airport"
                               required
                               class="text-center d-inline border" 
                               id="date_airport"/>
                           </div>
                         </div>
+                        
                         <div class="text-center mt-4">
-                          <button class="btn btn-purple">Send Request</button>
+                          <button 
+                          class="btn btn-purple event-button"  
+                          data-eventhandler="SendPriceRequest">Send Request</button>
                         </div>
                       </div>
                     </div>
@@ -635,5 +656,6 @@
     <script src="js/libs/datepicker/dist/datepicker.min.js"></script>
     <!-- Default Js -->
     <script src="js/default.js"></script>
+    <script src="js/latinise.js"></script>
 </body>
 </html>

@@ -112,8 +112,26 @@
     }
   });
 
+  // City List Module
+  $(".city_list").on('click', 'li', (e) => {
+    const selected_city = $(e.target).text(),
+          city_list_id = $($(e.target).parent())[0].id,
+          field_id = $(`#${city_list_id}`).data("fieldid");
+
+    $(`#${field_id}`).val(selected_city);
+
+    $(`#${city_list_id}`).html("");
+    $(`#${city_list_id}`).addClass("d-none");
+    console.log(selected_city);
+  });
+
+  $(".city_list").on('click', ".close_city_list_btn", (e) => {
+    $($(e.target).parent().parent()).addClass("d-none");
+  });
+    
+
   // date picker
   $('#date_airport').datepicker({autoHide: true});
 
 
-  } )
+  });

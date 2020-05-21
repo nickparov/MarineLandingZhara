@@ -9,6 +9,29 @@
   border-radius: 5px;
 }
 
+.city_list {
+  width: 90%;
+  position: absolute;
+  list-style-type: none;
+  background-color: #4d759d;
+  z-index: 300;
+  padding: 5px;
+}
+
+.city_list li {
+  padding: 5px;
+  margin-top: 5px;
+  background-color:  #6699cc;
+  transition: all 0.3s ease;
+  color: white;
+  font-weight: bold;
+}
+
+.city_list li:hover {
+  background-color: #73ace6;
+  cursor: pointer;
+}
+
 /* Loader */
 #loader_wrapper {
   width: 100vw;
