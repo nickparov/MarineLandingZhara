@@ -29,25 +29,27 @@
         }
     });
     var prevScrollpos = window.pageYOffset;
-  window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-420px";
-    }
-    prevScrollpos = currentScrollPos;
-  }
-  // STICKY
-  $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
 
-    if (scroll >= 50) {
-        $(".sticky").addClass("nav-sticky");
-    } else {
-        $(".sticky").removeClass("nav-sticky");
-    }
-  });
+  // window.onscroll = function() {
+  //   var currentScrollPos = window.pageYOffset;
+  //   if (prevScrollpos > currentScrollPos) {
+  //     document.getElementById("navbar").style.top = "0";
+  //   } else {
+  //     document.getElementById("navbar").style.top = "-420px";
+  //   }
+  //   prevScrollpos = currentScrollPos;
+  // }
+
+  // STICKY
+  // $(window).scroll(function() {
+  //   var scroll = $(window).scrollTop();
+
+  //   if (scroll >= 50) {
+  //       $(".sticky").addClass("nav-sticky");
+  //   } else {
+  //       $(".sticky").removeClass("nav-sticky");
+  //   }
+  // });
 
 
   // SmoothLink
@@ -65,9 +67,9 @@
     }
 
   // scrollspy
-  $("#navbarCollapse").scrollspy({
-    offset:20
-  });
+  // $("#navbarCollapse").scrollspy({
+  //   offset:20
+  // });
 
 
   //owlCarousel
