@@ -52,14 +52,14 @@
 }
 /* Lodaer End */
 
-#shipsImg {
-  animation: shipsAnimation 3s 1s 1;
+#flightPathimg {
+  animation: shipsAnimation 2s 1s 1;
   display: block !important;
 }
 
 @media (max-width: 980px) {
-  #shipsImg {
-    display: none !important;
+  #flightPathimg {
+    /* display: none !important; */
   }
 }
 
@@ -74,6 +74,15 @@
 
 #ToServicesBtn {
   animation: ToServicesBtnAnimation 2s 0s infinite;
+
+  text-transform: capitalize;
+  font-weight: 600;
+
+  border-radius: 5px !important;
+
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 @keyframes ToServicesBtnAnimation {
@@ -1154,7 +1163,7 @@ p {
 }
 
 .hero-4-bg {
-  padding: 160px 0 200px 0px;
+  padding: 160px 0 100px 0px;
 }
 
 .hero-4-bg .hero-4-title {
