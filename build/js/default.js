@@ -51,20 +51,83 @@
   //   }
   // });
 
+    
+
+  // MAIN SLIDER
+  $('.main-slider').slick({
+    dots: false,
+    infinite: true,
+    speed: 450,
+    arrows:false,
+    fade: false,
+    autoplay: true,
+    cssEase: 'ease'
+  });
+
+// CONTENT CAROUSEL
+  $('.content-carousel').slick({
+  dots: true,
+  arrows:false,
+  autoplay: true
+  });
+
+  function MobileSetup() {
+    $("#home").css({
+      height: window.innerHeight - 70
+    })
+  
+    const mobileTopOffset = 0;
+  
+    $("#home .main-slider").css({
+      "margin-top": mobileTopOffset
+    });
+  
+    $("#home .main-banner").css({
+      "margin-top": mobileTopOffset
+    });
+  
+  }
+
+  if(window.innerHeight <= 980) {
+    MobileSetup();
+  }
+
+  
+  $(".slick-dots li button").addClass("slick-dot-button");
+
 
   // SmoothLink
-  $('#ToServicesBtn').on('click', (e) => SmoothTransitionLink(e));
+  $('#ToServicesBtn').on('click', (e) => SmoothTransitionLink(e, window.innerHeight - 90));
   $('.navbar-nav a').on('click', (e) => SmoothTransitionLink(e));
   $('#BackToTopBtn').on('click', (e) => SmoothTransitionLink(e));
-  function SmoothTransitionLink(e) {
+  
+  function SmoothTransitionLink(e, topOffset = null) {
     e.preventDefault();
-    var clickedLink = $(e.target),
-        sectionToNavigateTO = clickedLink.attr('href').split('#')[1];
+    var clickedLink = $(e.target)[0],
+        sectionToNavigateTO = $(clickedLink).attr('href').split('#')[1];
+
+    var trueTopOffset = 0;
+
+    if($(clickedLink).data("topoffset")) {
+      trueTopOffset = parseInt($(clickedLink).data("topoffset"));
+    }
+
+    if(topOffset) {
+      trueTopOffset = topOffset;
+    }
     
     $('html, body').stop().animate({
-      scrollTop: $(`#${sectionToNavigateTO}`).offset().top - 0
+      scrollTop: $(`#${sectionToNavigateTO}`).offset().top + trueTopOffset
     }, 1500, 'easeInOutExpo');
+  }
+
+  // Links Menu Interactions 
+  $("a.nav-link").on('click', (e) => {
+    if(window.innerWidth <= 990) {
+      $("#navbarCollapse").removeClass("show");
+      $("button.navbar-toggler").addClass("collapsed");
     }
+  });
 
   // scrollspy
   // $("#navbarCollapse").scrollspy({
@@ -73,17 +136,14 @@
 
 
   //owlCarousel
-  $(document).ready(function() {
+  // $("#owl-demo").owlCarousel({
+  //   autoPlay: 3000, //Set AutoPlay to 3 seconds
 
-      $("#owl-demo").owlCarousel({
-          autoPlay: 3000, //Set AutoPlay to 3 seconds
+  //   items: 4,
+  //   itemsDesktop: [1199, 3],
+  //   itemsDesktopSmall: [979, 1]
 
-          items: 4,
-          itemsDesktop: [1199, 3],
-          itemsDesktopSmall: [979, 1]
-
-      });
-  });
+  // });
 
   // Service box
   $(".service-box").on('click', function(e) {

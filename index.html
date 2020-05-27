@@ -63,24 +63,28 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-custom" id="navbar">
         <div class="container">
             <!-- LOGO -->
-            <a href="index.html#home" class="logo-sticky">
-                <!-- <img src="images/logo-dark.png" alt="" class="logo-dark" height="32" />
-                <img src="images/logo-light.png" alt="" class="logo-light" height="32" /> -->
-                <p class="btn btn-purple mt-3">Zhara/Crewing</p>
+            <a href="#" class="logo-sticky">
+                <img src="images/plane.png" alt="" class="logo-dark" style="filter: invert(100%);" height="48" />
+                <!-- <p class="btn btn-purple mt-1 mb-1">Zhara/Crewing</p> -->
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+
+            <a href="tel:+380674805225" class="contacts_link btn btn-purple">
+              <i class="remixicon-phone-line"></i>
+              +38(067) 480 52 25 
+            </a>
+            <button class="navbar-toggler mt-0" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="remixicon-menu-fill"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
                     <li class="nav-item">
-                        <a href="index.html#home"  class="nav-link">Home</a>
+                        <a href="index.html#home"  class="nav-link" data-topoffset="-80">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#services"  class="nav-link">Services</a>
+                        <a href="index.html#services"  class="nav-link" data-topoffset="900">Services</a>
                     </li>
                     <li class="nav-item">
-                      <a href="index.html#contacts"  class="nav-link">Contacts</a>
+                      <a href="index.html#contacts"  class="nav-link" data-topoffset="0">Contacts</a>
                     </li> 
                     <!-- <li class="nav-item">
                       <a href="index.html#chat_section" class="nav-link">Chat with us</a>
@@ -104,7 +108,7 @@
     <!-- Navbar End -->
 
     <!-- HERO START -->
-    <section class="hero-4-bg position-relative bg-gradient" id="home">
+    <!-- <section class="hero-4-bg position-relative bg-gradient" id="home">
         <div class="container">
             <div class="row hero-4-content">
                 <div class="col-12" style="margin-bottom: 48px;">
@@ -114,17 +118,7 @@
                     <div class="mt-4 py-4 mx-auto">
                       <img src="images/flight-path.png" alt="" class="img-fluid mx-auto d-block" id="flightPathimg">
                     </div>
-                
-                <!-- <div class="col-lg-5 p-4">
-                  <h1 class="text-white hero-4-title font-weight-medium mb-4 line-height-1_4">Best Connection Air tickets</h1>
-                  <h3 class="text-white hero-2-title font-weight-medium mb-4 line-height-1_4">for Crewing and Seaman Agencies.</h3>
-                  
-                <p class="text-white m-0 pl-1" style="text-transform: capitalize; font-size: 18px; font-weight: 100;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit libero explicabo numquam, tenetur doloribus natus obcaecati consequuntur atque corrupti accusantium iusto ab accusamus laborum? Quasi temporibus esse hic doloribus aliquam ea eaque delectus quibusdam veritatis modi facere maxime numquam ratione quidem voluptatem, dolore repudiandae culpa mollitia velit, aut amet! Iste ut obcaecati modi sunt necessitatibus deleniti voluptatibus vitae asperiores accusantium.
-                    </p>
-                  <p class="text-white mb-5">Start Cooperation with us right now!</p> 
-                    
-                </div> -->
-                
+
                    
                 </div>
                 <div class="col-6-lg col-12-xs mx-auto">
@@ -135,7 +129,7 @@
                   </a>
                 </div>
             </div>
-        </div>
+        </div> -->
         
 
         <!-- <div class="container-fluid">
@@ -145,13 +139,42 @@
                 </div>
             </div>
         </div> -->
-    </section>
+    <!-- </section> -->
     <!-- HERO END -->
 
+    <section class="slider" id="home">
+      <div class="fixed-form">
+        <div class="container main-banner ">
+          <h3>Best Air tickets</h3>
+          <h5>Crewing and Seaman Agencies</h5>
+          <!-- <form>
+            <input type="text" placeholder="Tracking ID">
+            &nbsp;
+            <input type="text" class="datepicker" placeholder="Date">
+            &nbsp;
+            <button type="submit">CHECK SHIPPING</button>
+          </form> -->
+
+          <a href="index.html#services" class="btn btn-success mt-5 rounded-pill" id="ToServicesBtn">
+            <i class=" pr-4 mt-1 remixicon-arrow-down-s-line ri-lg"></i> 
+              Our Services 
+            <i class=" pl-4 mt-1 remixicon-arrow-down-s-line ri-lg"></i>
+          </a>
+        </div>
+        <!-- end container --> 
+      </div>
+      <!-- end fixed-form -->
+      <div class="main-slider">
+        <div class="slide1"> </div>
+        <!-- end slider1 -->
+        <div class="slide2"> </div>
+      </div>
+    </section>
+
     <!-- SERVICE START -->
-    <section class="section position-relative" id="services">
+    <section class="section" id="services">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center pt-5">
                 <div class="col-lg-7">
                     <div class="text-center title mb-4">
                         <h5 class="font-weight-bold text-uppercase text-dark">Our Services</h5>
@@ -680,7 +703,8 @@
     <!-- date picker -->
     <script src="js/libs/datepicker/dist/datepicker.min.js"></script>
     <!-- Default Js -->
-    <script src="js/default.js"></script>
+    <script src="js/slick.js"></script>
     <script src="js/latinise.js"></script>
+    <script src="js/default.js"></script>
 </body>
 </html>
