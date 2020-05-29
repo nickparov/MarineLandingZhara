@@ -127,15 +127,18 @@
 
 /* CUSTOMIZED HTML */
 
+#navbar .btn-custom-menu-phone {
+  padding: 5px 5px;
+}
 
 #home {
   background: linear-gradient(to right, #003bd5c4, #6699cc);
-  padding-top: 130px;
+  /* padding-top: 130px; */
   position: inherit;
 }
 
 #home .fixed-form {
-  margin-top: 200px;
+  margin-top: 70px;
 }
 
 /* FORM ELEMENTS */
@@ -357,7 +360,7 @@ button.slick-dot-button{ height:40px; background:#6699cc; color:#fff; padding:0 
 /* RESOLUTION FIXES */
 
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
-.slider{ height:400px; margin-top: 70px;}
+.slider{ height:400px; margin-top: 30px;}
 .slider .main-slider{ height:420px;}
 .slider .main-slider .slide1{ height:420px;}
 .slider .main-slider .slide2{ height:420px;}

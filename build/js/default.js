@@ -51,8 +51,6 @@
   //   }
   // });
 
-    
-
   // MAIN SLIDER
   $('.main-slider').slick({
     dots: false,
@@ -73,7 +71,7 @@
 
   function MobileSetup() {
     $("#home").css({
-      height: window.innerHeight - 70
+      height: window.innerHeight
     })
   
     const mobileTopOffset = 0;
@@ -97,7 +95,7 @@
 
 
   // SmoothLink
-  $('#ToServicesBtn').on('click', (e) => SmoothTransitionLink(e, window.innerHeight - 90));
+  $('#ToServicesBtn').on('click', (e) => SmoothTransitionLink(e, window.innerHeight - 85));
   $('.navbar-nav a').on('click', (e) => SmoothTransitionLink(e));
   $('#BackToTopBtn').on('click', (e) => SmoothTransitionLink(e));
   
