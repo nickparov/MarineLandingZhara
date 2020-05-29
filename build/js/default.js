@@ -70,29 +70,36 @@
   });
 
   function MobileSetup() {
-    $("#home").css({
-      height: window.innerHeight
-    })
   
-    const mobileTopOffset = 0;
+    // const mobileTopOffset = 0;
   
-    $("#home .main-slider").css({
-      "margin-top": mobileTopOffset
-    });
+    // $("#home .main-slider").css({
+    //   "margin-top": mobileTopOffset
+    // });
   
-    $("#home .main-banner").css({
-      "margin-top": mobileTopOffset
-    });
+    // $("#home .main-banner").css({
+    //   "margin-top": mobileTopOffset
+    // });
   
+    $("#menu-phone").removeClass('d-none');
   }
 
-  if(window.innerHeight <= 980) {
+  function DesktopSetup() {
+    console.log("Desktop Setup");
+  }
+
+  if(window.innerWidth <= 980) {
     MobileSetup();
+  } else {
+    DesktopSetup();
   }
 
-  
-  $(".slick-dots li button").addClass("slick-dot-button");
+  // Home page height 
+  $("#home").css({
+    height: window.innerHeight
+  });
 
+  $(".slick-dots li button").addClass("slick-dot-button");
 
   // SmoothLink
   $('#ToServicesBtn').on('click', (e) => SmoothTransitionLink(e, window.innerHeight - 85));
@@ -182,16 +189,24 @@
 
     $(`#${city_list_id}`).html("");
     $(`#${city_list_id}`).addClass("d-none");
-    console.log(selected_city);
   });
 
-  $(".city_list").on('click', ".close_city_list_btn", (e) => {
-    $($(e.target).parent().parent()).addClass("d-none");
-  });
+  // $(".city_list").on('click', ".close_city_list_btn", (e) => {
+  //   $($(e.target).parent().parent()).addClass("d-none");
+  // });
+
+  $(".price_city_select_field").blur(function(e) {
+    const city_list = $(this).parent().children().last();
+    setTimeout(() => {
+      if(!$(city_list).hasClass('d-none')) 
+        $(city_list).addClass('d-none');
+    }, 100);
+    
+  })
+
     
 
   // date picker
   $('#date_airport').datepicker({autoHide: true});
-
 
   });
