@@ -81,7 +81,7 @@
     //   "margin-top": mobileTopOffset
     // });
   
-    $("#menu-phone").removeClass('d-none');
+    $("#middle-menu-container").removeClass('d-none');
   }
 
   function DesktopSetup() {
@@ -103,7 +103,7 @@
 
   // SmoothLink
   $('#ToServicesBtn').on('click', (e) => SmoothTransitionLink(e, window.innerHeight - 85));
-  $('.navbar-nav a').on('click', (e) => SmoothTransitionLink(e));
+  $('.navbar-nav a.scroll_link').on('click', (e) => SmoothTransitionLink(e));
   $('#BackToTopBtn').on('click', (e) => SmoothTransitionLink(e));
   
   function SmoothTransitionLink(e, topOffset = null) {

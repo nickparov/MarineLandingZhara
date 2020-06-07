@@ -127,6 +127,15 @@
 
 /* CUSTOMIZED HTML */
 
+#middle-menu-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+#middle-menu-container a {
+  font-size: 1.3em;
+}
+
 #navbar .btn-custom-menu-phone {
   padding: 5px 5px;
 }
