@@ -103,6 +103,7 @@
 
   // SmoothLink
   $('#ToServicesBtn').on('click', (e) => SmoothTransitionLink(e, window.innerHeight - 85));
+  $('#ToPricesBtn').on('click', (e) => SmoothTransitionLink(e));
   $('.navbar-nav a.scroll_link').on('click', (e) => SmoothTransitionLink(e));
   $('#BackToTopBtn').on('click', (e) => SmoothTransitionLink(e));
   

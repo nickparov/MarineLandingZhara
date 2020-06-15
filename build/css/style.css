@@ -229,7 +229,7 @@ button.slick-dot-button{ height:40px; background:#6699cc; color:#fff; padding:0 
 .slider .slick-dots li.slick-active button{ background:#ffffff;}
 .slider .main-slider{ width:100%; float:left; height:580px;}
 .slider .fixed-form{ width:100%; float:left; position:absolute; left:0; top:35px; z-index:2;}
-.slider .fixed-form h3{ font-size:90px; color:#ffffff; font-weight:700;}
+.slider .fixed-form h3{ font-size:60px; color:#ffffff; font-weight:700;}
 .slider .fixed-form h5{ font-size:30px; color:#fff; letter-spacing:4px;}
 .slider .fixed-form form{ width:100%; float:left; margin-top:30px;}
 .slider .fixed-form form input[type="text"]{ width:200px; background:none; color:#fff; border:3px solid #fff; font-weight:500;}
@@ -451,19 +451,24 @@ button.slick-dot-button{ height:40px; background:#6699cc; color:#fff; padding:0 
 }
 
 #ToServicesBtn {
-  animation: ToServicesBtnAnimation 2s 0s infinite;
+  color: white;
+}
+
+#ToPricesBtn {
+  animation: ToPricesBtnAnimation 2s 0s infinite;
 
   text-transform: capitalize;
   font-weight: 600;
 
   border-radius: 5px !important;
 
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-@keyframes ToServicesBtnAnimation {
+@keyframes ToPricesBtnAnimation {
   0%, 100% {
     transform: scale(0.9);
   }
