@@ -94,9 +94,14 @@
     DesktopSetup();
   }
 
+  var homeHeight = window.innerHeight;
   // Home page height 
+  if(window.innerWidth < 800) {
+    homeHeight += 150
+  } 
+
   $("#home").css({
-    height: window.innerHeight
+    height: homeHeight
   });
 
   $(".slick-dots li button").addClass("slick-dot-button");
@@ -107,24 +112,34 @@
   $('.navbar-nav a.scroll_link').on('click', (e) => SmoothTransitionLink(e));
   $('#BackToTopBtn').on('click', (e) => SmoothTransitionLink(e));
   
-  function SmoothTransitionLink(e, topOffset = null) {
+  function SmoothTransitionLink(e) {
     e.preventDefault();
     var clickedLink = $(e.target)[0],
         sectionToNavigateTO = $(clickedLink).attr('href').split('#')[1];
-
-    var trueTopOffset = 0;
-
-    if($(clickedLink).data("topoffset")) {
-      trueTopOffset = parseInt($(clickedLink).data("topoffset"));
-    }
-
-    if(topOffset) {
-      trueTopOffset = topOffset;
-    }
     
-    $('html, body').stop().animate({
-      scrollTop: $(`#${sectionToNavigateTO}`).offset().top + trueTopOffset
-    }, 1500, 'easeInOutExpo');
+    console.log(sectionToNavigateTO);
+
+
+    if(sectionToNavigateTO === "services") {
+      PerformScrolling(800);
+    } else if(sectionToNavigateTO === "CheckPriceSection"){
+      if(window.innerWidth < 800) {
+        PerformScrolling(-200);
+      } else {
+        PerformScrolling(-300);
+      }
+      
+    } else {
+      PerformScrolling();
+    }
+
+    function PerformScrolling(topoffset = 0) {
+      $('html, body').stop().animate({
+        scrollTop: $(`#${sectionToNavigateTO}`).offset().top + topoffset
+      }, 1500, 'easeInOutExpo');
+    }
+
+    
   }
 
   // Links Menu Interactions 

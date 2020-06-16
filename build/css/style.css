@@ -369,12 +369,39 @@ button.slick-dot-button{ height:40px; background:#6699cc; color:#fff; padding:0 
 /* RESOLUTION FIXES */
 
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
-.slider{ height:400px; margin-top: 30px;}
-.slider .main-slider{ height:420px;}
-.slider .main-slider .slide1{ height:420px;}
-.slider .main-slider .slide2{ height:420px;}
-.slider .main-slider .slide3{ height:420px;}
-.slider .fixed-form h3{ font-size:50px;}
+  .slider{ height:400px; margin-top: 30px;}
+  
+  .slider .main-slider { 
+    height:420px;
+  }
+  
+  .slider .main-slider .slide1 { 
+    height:420px;
+  }
+  
+  .slider .main-slider .slide2 { 
+    height:420px;
+  }
+  
+  .slider .main-slider .slide3 { 
+    height:420px;
+  }
+  
+  .slider .fixed-form h3 { 
+    font-size:40px;
+  }
+  
+  .slider .fixed-form h5 { 
+    font-size: 25px;
+  }
+  
+  #second-main-screen-block h4 {
+      background-color: rgba(0,0,0,0.3);
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 10px;
+  }
+
 }
 
 /* CUSTOM */
