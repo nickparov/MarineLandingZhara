@@ -192,8 +192,7 @@ export const Events = (function(){
     
   }
 
-  function Setup(): boolean {
-    let error = false;
+  function Setup(): void {
     // Setup Button Events
     $(document).on('click', Selectors.EventBtnClass ,(e) => {
       e.preventDefault();
@@ -221,8 +220,6 @@ export const Events = (function(){
         throw new Error("No such eventFuncIndentifier prop on EventHandler obj! Wrong one provided!");
       }
     });
-
-    return true;
   }
 
   function _getEventFuncIdentifier(e: JQuery.TriggeredEvent): string {

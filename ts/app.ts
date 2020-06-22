@@ -10,15 +10,13 @@ var DatePicker = require('@chenfengyuan/datepicker');
 const App = (function () {
 
   function start(): void {
-    Cities.init();
-    // if event were succesfully setup
-    if(!Events.Setup()) {
-      // show error page!!!
-    }
+    
+    // setup events
+    Events.Setup();
     // hide loader
-    setTimeout(() => {
-      Loader.hideLoader();
-    }, 0);
+    Loader.hideLoader();
+    // init cities
+    Cities.init();
     
   }
 
