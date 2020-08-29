@@ -1,3 +1,4 @@
 node_modules
 cloud-functions
 **/Firebase.ts
+ts/Modules/FireBase.ts
